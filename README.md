@@ -58,3 +58,11 @@ public function post_confirm(){
     }
 }
 ```
+
+## Código versión corregida
+```php
+public function post_confirm(){
+}
+```
+
+
