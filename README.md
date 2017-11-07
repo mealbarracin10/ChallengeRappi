@@ -67,6 +67,7 @@ const ERROR_INVALID_REQUEST =3
 const ERROR_PARAMETERS_CONFLICT = 2
 const ERROR_PARAMETERS_CONFLICT = 2
 const ERROR_DRIVER = 1
+const ERROR_UUI_EMPTY = 0
 
 
 public function post_confirm(){
@@ -91,14 +92,18 @@ if ($service != NULL) {
             //Notificar a usuario!!
             $pushMessage = 'Tu servicio ha sido confirmado!';
             $push = Push::make();
-            if ($service->user->type == '1') {//iPhone
+            if ($servicio->user->uuid == ''){
+                return Response::json(array(ERROR=>ERROR_UUI_EMPTY));
+            }
+            //Notification platform IOS
+            if ($service->user->type == '1') {
                 $push->ios($servicio->user->uuid, $pushMessage, 1, 'honk.wav', 'Open', array('service_id' => $servicio->id));
             }
+            //Notification platform ANDROID
             else{
                 $push->android2($servicio->user->uuid, $pushMessage, 1, 'default', 'Open', array('service_id' => $servicio>id));
             }
         }
-            return Response::json(array(ERROR => '0'));
     }
     else{
             return Response::json(array(ERROR=> ERROR_DRIVER));
@@ -122,6 +127,8 @@ else{
  - Se evidencia que en el codigo se devuelve un json "key" "valor", en ciertas ocasiones sin embargo por temas de mantenibilidad se recomienda que dichos valores se cambien por constantes que sean lo suficientemente dicientes del error ocurrido, por ejemplo el error 3 representa que no se recibieron parametros en la petición por lo que se puede reemplazar por una constante llamada ERROR_INVALID_REQUEST que tenga el valor de 3
  
 -  Se evidencia que en codigo a analizar se esta llamando dos veces al metodo update, en el primer caso envia dos parametros $driver_id y $status_id, y en el segundo caso envia car_id, por lo que se sugiere unificar los metodos mencionados en el que solo se llame una unica vez con los tres parametros
+
+- Se evidencia que las respuestas de los metodos de las notificaciones no se utilizan, lo cual hace guardar en memeoria varibles innecesarias, por lo cual la sugerencia es llamar los metodos sin tener un variable almacenando el retorno
  
  
 
