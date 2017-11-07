@@ -131,11 +131,11 @@ else{
 - Se evidencia que las respuestas de los metodos de las notificaciones no se utilizan, lo cual hace guardar en memeoria varibles innecesarias, por lo cual la sugerencia es llamar los metodos sin tener un variable almacenando el retorno
  
  
- ## ¿En qué consiste el principio de responsabilidad única? 
+ ### ¿En qué consiste el principio de responsabilidad única? 
  
  El principio de responsabilidad unica establece que cada clase debe usarse unica y solo unicamente para un fin, es decir cada clase debe responder solo por una funcionalidad de la aplicación, los metodos que estan dicha clase serviran para soportar la funcionalidad, por ejemplo suponiendo que se tiene un software que tiene varias formas de autenticar usuarios(redes sociales, formulario inicio de sesion, sesion invitado), entonces debe existir una clase que se encargue de manejar la autenticación de usuarios, dentro de dicha clase debera existir un metodo que se encargue de validar la autenticacion de usuarios que ingresan con su red social
  
- ## Qué características tiene según tu opinión “buen” código o código limpio?
+ ### Qué características tiene según tu opinión “buen” código o código limpio?
  
  - Pienso que una de las caracterisicas mas importantes en el desarrollo del software deberia ser la mantenibilidad, que es la capacidad de un software a modificar parcial o total su funcionalidad sin demandar mucho tiempo.
     - De la mano de la mantenibilidad pueden ir atados muchas caracteristicas que pueden hacer que nuestro softwae sea de alta calidad, como el tema de una documentación de la arquitectura y documentacion de codigo que pueda apoyar a los futuros desarrolladores a dismunuir el tiempo de entendimiento del software
