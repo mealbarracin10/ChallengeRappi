@@ -1,8 +1,7 @@
 # Challenge Rappi
 
-
+Martin Edgar Albarracin
 ## Código versión inicial
-
 ```php
 
 public function post_confirm(){
@@ -141,10 +140,4 @@ else{
     - De la mano de la mantenibilidad pueden ir atados muchas caracteristicas que pueden hacer que nuestro softwae sea de alta calidad, como el tema de una documentación de la arquitectura y documentacion de codigo que pueda apoyar a los futuros desarrolladores a dismunuir el tiempo de entendimiento del software
  - La segunda caracteristica que deberia tener la mayoria de aplicativos con diseño por componentes que beneficie la reutiliacion de codigo, ue comunmente se llamaria DRY, dont repeat yourself , no te repitas
  - Otra de las practicas que pienso se deberia hacer en la implementación de un software es la captura y tratamiento de errores no controlados , que va de la mano con sistemas de auditoría, que permita registrar cada una de las acciones de los usuarios con el fin de llevar una trazabilidad y lograr detectar errores en el sistema
- - No es recomendado que alguno de los metodos que se tenga reciba mas de 3 parametros, para ello se deberia crear una clase con el fin de que el metodo reciba la clase, y analizar bien la funcionalidad porque en ciertos casos se puede dividir en metodos con una unica responsabilidad los cuales cada uno retorne su valor a un metodo grande que sea el encargado de toamr las decisiones en base a la respuesta de los metodos de responsabilidad unica
- 
- 
- 
-
-
-
+ - No es recomendado que alguno de los metodos que se tenga reciba mas de 3 parametros, para ello se deberia crear una clase con el fin de que el metodo reciba la clase, y analizar bien la funcionalidad porque en ciertos casos se puede dividir en metodos con una unica responsabilidad los cuales cada uno retorne su valor a un metodo grande que sea el encargado de toamr las decisiones en base a la respuesta de los metodos de responsabilidad unica.
